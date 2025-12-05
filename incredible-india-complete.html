@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Incredible India - Heritage, Hospitality & Tourism Skill Competition: categories, timeline, skills demos, travel tips and resources.">
+    <title>Incredible India - Heritage, Hospitality & Tourism Skill Competition</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #1e3c72;
+            --secondary-color: #2a5298;
+            --accent-color: #f39c12;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-light: #f5f7fa;
+            --bg-white: #ffffff;
+            --border-color: #e0e0e0;
+            --glass: rgba(255,255,255,0.6);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .logo .tagline {
+            font-size: 12px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        /* Mobile nav */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .nav-links.mobile-hidden {
+            display: none;
+        }
+
+        .nav-links button {
+            background: none;
+            border: none;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .nav-links button:hover,
+        .nav-links button.active {
+            border-bottom-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* Utility visually-hidden for screen readers */
+        .sr-only {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        .hero-content h2 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #e67e22;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.3);
+        }
+
+        /* Page Sections */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* Overview Section */
+        .overview {
+            padding: 60px 20px;
+            background-color: var(--bg-white);
+            margin-bottom: 60px;
+        }
+
+        .overview h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .overview-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .overview-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .overview-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Quick Links Section */
+        .quick-links {
+            padding: 60px 20px;
+            background-color: var(--bg-light);
+        }
+
+        .quick-links h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Photo gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-card {
+            background: white;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .responsive-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .img-caption {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 8px;
+        }
+
+        /* Card thumbnails */
+        .card-thumb {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .skill-thumb {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .link-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .link-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .link-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            padding: 40px 20px;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-number {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .category-card h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .category-card p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .category-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: var(--bg-light);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            border: 1px solid var(--accent-color);
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 40px 20px;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-color) 0%, var(--primary-color) 100%);
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: 52%;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 52%;
+            margin-right: 0;
+            text-align: left;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .marker-dot {
+            width: 25px;
+            height: 25px;
+            background: white;
+            border: 4px solid var(--accent-color);
+            border-radius: 50%;
+            display: block;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .timeline-content h3 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .timeline-date {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-description {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .timeline-details {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .timeline-details li {
+            padding: 5px 0;
+            color: var(--text-light);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .timeline-details li:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-details li::before {
+            content: '✓ ';
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        /* Skills Showcase */
+        .skills-showcase {
+            padding: 40px 20px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-demo {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            text-align: center;
+            border-top: 4px solid var(--accent-color);
+        }
+
+        .skill-demo:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .skill-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .skill-demo h3 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .skill-category {
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .skill-description {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .skill-requirements {
+            text-align: left;
+            background: var(--bg-light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .skill-requirements strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .skill-requirements ul {
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .skill-requirements li {
+            padding: 5px 0;
+            color: var(--text-light);
+        }
+
+        .skill-requirements li::before {
+            content: '▸ ';
+            color: var(--accent-color);
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        /* Digital Features */
+        .digital-features {
+            padding: 60px 20px;
+            background-color: var(--bg-white);
+        }
+
+        .digital-features h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* About Content */
+        .about-content {
+            padding: 40px 20px;
+        }
+
+        .about-section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-section h2 {
+            font-size: 28px;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 3px solid var(--accent-color);
+            padding-bottom: 10px;
+        }
+
+        .about-section p {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 15px;
+        }
+
+        .objectives-list,
+        .categories-list {
+            margin: 20px 0;
+        }
+
+        .objectives-list li {
+            margin-bottom: 12px;
+            color: var(--text-light);
+            padding-left: 20px;
+        }
+
+        .objectives-list li::before {
+            content: '✓ ';
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-left: -20px;
+            margin-right: 10px;
+        }
+
+        .categories-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .list-column ul {
+            list-style: none;
+        }
+
+        .list-column li {
+            padding: 8px 0;
+            color: var(--text-light);
+            padding-left: 20px;
+        }
+
+        .list-column li::before {
+            content: '▸ ';
+            color: var(--accent-color);
+            margin-left: -20px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .benefit-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border-top: 4px solid var(--accent-color);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .benefit-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Competition Info */
+        .competition-info {
+            padding: 60px 20px;
+            background-color: var(--bg-light);
+        }
+
+        .competition-info h2 {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .info-card h3 {
+            font-size: 18px;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .info-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        footer p:last-child {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .logo {
+                text-align: center;
+            }
+
+            .logo h1 {
+                font-size: 24px;
+            }
+
+            .hero-content h2 {
+                font-size: 36px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .overview h2,
+            .quick-links h2,
+            .digital-features h2,
+            .competition-info h2 {
+                font-size: 28px;
+            }
+
+            .overview-grid,
+            .links-grid,
+            .features-grid,
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+                text-align: left;
+            }
+
+            .timeline-marker {
+                left: 20px;
+            }
+
+            .categories-grid,
+            .skills-grid,
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-toggle {
+                display: block;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+
+            .nav-links {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .nav-links.mobile-hidden {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo h1 {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                gap: 10px;
+                font-size: 14px;
+            }
+
+            .hero-content h2 {
+                font-size: 24px;
+            }
+
+            .page-header h1 {
+                font-size: 24px;
+            }
+
+            .overview h2,
+            .quick-links h2,
+            .digital-features h2,
+            .competition-info h2 {
+                font-size: 22px;
+            }
+
+            .category-card,
+            .skill-demo,
+            .about-section {
+                padding: 15px;
+            }
+
+            .categories-list {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-content {
+                margin-left: 40px !important;
+                padding: 15px;
+            }
+        }
+
+        .back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 99;
+            transition: all 0.3s ease;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            padding: 20px;
+        }
+
+        .modal[aria-hidden="false"] {
+            display: flex;
+        }
+
+        .modal-panel {
+            background: var(--bg-white);
+            width: 100%;
+            max-width: 1000px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            padding: 20px;
+            position: relative;
+            transform: translateY(10px) scale(.98);
+            opacity: 0;
+            transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 260ms ease;
+        }
+
+        /* When modal is visible, animate panel in */
+        .modal[aria-hidden="false"] .modal-panel {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+
+        .modal-close {
+            position: absolute;
+            right: 14px;
+            top: 12px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        .modal-content img {
+            width: 100%;
+            border-radius: 8px;
+            max-height: 420px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 600px) {
+            .modal-panel {
+                padding: 12px;
+            }
+
+            .modal-content {
+                display: block;
+            }
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>Incredible India</h1>
+                    <p class="tagline">Heritage, Hospitality & Tourism Skill Competition</p>
+                </div>
+                <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">☰ <span class="sr-only">Toggle navigation</span></button>
+                <ul class="nav-links" id="mainNav">
+                    <li><button class="nav-btn" data-section="home">Home</button></li>
+                    <li><button class="nav-btn" data-section="categories">Categories</button></li>
+                    <li><button class="nav-btn" data-section="timeline">Timeline</button></li>
+                    <li><button class="nav-btn" data-section="skills">Skills Demo</button></li>
+                    <li><button class="nav-btn" data-section="about">About</button></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HOME SECTION -->
+        <section id="home" class="page-section active">
+            <div class="hero">
+                <div class="hero-content">
+                    <h2>Celebrate Excellence in Tourism & Hospitality</h2>
+                    <p>Showcase your skills in India's Heritage, Hospitality & Tourism sector</p>
+                    <button class="btn btn-primary" data-section="categories">Explore Categories</button>
+                </div>
+            </div>
+
+            <section class="overview">
+                <div class="container">
+                    <h2>About the Competition</h2>
+                    <div class="overview-grid">
+                        <div class="overview-card">
+                            <h3>🏆 9 Categories</h3>
+                            <p>Diverse skill categories covering travel, food, retail, and more</p>
+                        </div>
+                        <div class="overview-card">
+                            <h3>📅 Two Levels</h3>
+                            <p>School level (November) and Zonal level (December) competitions</p>
+                        </div>
+                        <div class="overview-card">
+                            <h3>💡 Interactive Skills</h3>
+                            <p>Real-world skill demonstrations and hands-on activities</p>
+                        </div>
+                        <div class="overview-card">
+                            <h3>🌍 National Reach</h3>
+                            <p>Participants from schools across India competing at the highest level</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quick-links">
+                <div class="container">
+                    <h2>Quick Navigation</h2>
+                    <div class="links-grid">
+                        <div class="link-card" data-section="categories">
+                            <h3>View Categories</h3>
+                            <p>Explore all 9 skill categories</p>
+                        </div>
+                        <div class="link-card" data-section="timeline">
+                            <h3>Competition Timeline</h3>
+                            <p>Check important dates</p>
+                        </div>
+                        <div class="link-card" data-section="skills">
+                            <h3>Skill Demonstrations</h3>
+                            <p>See what skills are tested</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="photo-gallery overview">
+                <div class="container">
+                    <h2>Discover India</h2>
+                    <p style="text-align:center; color:var(--text-light); margin-top:6px;">A glimpse of landmarks, cuisine and culture</p>
+                    <div class="gallery-grid">
+                        <figure class="gallery-card">
+                            <img class="responsive-img" src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80" alt="Taj Mahal, Agra">
+                            <figcaption class="img-caption">Taj Mahal — Agra (Mughal architecture masterpiece)</figcaption>
+                        </figure>
+                        <figure class="gallery-card">
+                            <img class="responsive-img" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Kerala Backwaters">
+                            <figcaption class="img-caption">Kerala Backwaters — Serene backwaters and houseboats</figcaption>
+                        </figure>
+                        <figure class="gallery-card">
+                            <img class="responsive-img" src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Indian Street Food">
+                            <figcaption class="img-caption">Street Food — Flavors from across India</figcaption>
+                        </figure>
+                        <figure class="gallery-card">
+                            <img class="responsive-img" src="https://images.unsplash.com/photo-1549648024-3f5be8e0a7d9?auto=format&fit=crop&w=1200&q=80" alt="Jaipur Palace">
+                            <figcaption class="img-caption">Historic Palaces — Royal heritage and vibrant colors</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+
+        </section>
+
+        <!-- CATEGORIES SECTION -->
+        <section id="categories" class="page-section">
+            <div class="page-header">
+                <div class="container">
+                    <h1>Competition Categories</h1>
+                    <p>9 Diverse Skill Categories for the Incredible India Initiative</p>
+                </div>
+            </div>
+
+            <section class="categories-section">
+                <div class="container">
+                    <div class="categories-grid">
+                        <!-- Category 1 -->
+                        <div class="category-card">
+                            <img class="card-thumb" src="https://images.unsplash.com/photo-1505765057191-7c1c2b8f0a5b?auto=format&fit=crop&w=1200&q=60" alt="Travel & Tourism">
+                            <div class="category-number">01</div>
+                            <h3>Travel & Tourism</h3>
+                            <p>Develop expertise in travel planning, destination knowledge, and customer service excellence in the tourism industry.</p>
+                            <div class="category-skills">
+                                <span class="skill-tag">Destination Knowledge</span>
+                                <span class="skill-tag">Customer Service</span>
+                                <span class="skill-tag">Travel Planning</span>
+                            </div>
+                        </div>
+
+                        <!-- Category 2 -->
+                        <div class="category-card">
+                            <img class="card-thumb" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=60" alt="Food Production">
+                            <div class="category-number">02</div>
+                            <h3>Food Production</h3>
+                            <p>Master culinary arts, food safety, and traditional Indian cuisine preparation techniques.</p>
+                            <div class="category-skills">
+                                <span class="skill-tag">Culinary Arts</span>
+                                <span class="skill-tag">Food Safety</span>
+                                <span class="skill-tag">Indian Cuisine</span>
+                            </div>
+                        </div>
+
+                        <!-- Category 3 -->
+                        <div class="category-card">
+                            <img class="card-thumb" src="https://images.unsplash.com/photo-1520975919076-9abf3c4f7b16?auto=format&fit=crop&w=1200&q=60" alt="Apparel">
+                            <div class="category-number">03</div>
+                            <h3>Apparel</h3>
+                            <p>Showcase traditional dress tailoring and modern adaptation techniques with cultural authenticity.</p>
+                            <div class="category-skills">
+                                <span class="skill-tag">Tailoring</span>
+                                <span class="skill-tag">Design</span>
+                                <span class="skill-tag">Tradition</span>
+                            </div>
+                        </div>
+
+                        <!-- Category 4 -->
+                        <div class="category-card">
+                            <img class="card-thumb" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=60" alt="Beauty & Wellness">
+                            <div class="category-number">04</div>
+                            <h3>Beauty & Wellness</h3>
+                            <p>Learn traditional beauty practices and wellness treatments with modern therapeutic approaches.</p>
+                            <div class="category-skills">
+                                <span class="skill-tag">Traditional Treatments</span>
+                                <span class="skill-tag">Herbal Therapy</span>
+                                <span class="skill-tag">Wellness</span>
+                            </div>
+                        </div>
+
+                        <!-- Category 5 -->
+                        <div class="category-card">
+                            <img class="card-thumb" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60" alt="Retail">
+                            <div class="category-number">05</div>
+                            <h3>Retail</h3>
+                            <p>Excel in retail operations, customer engagement, and sales excellence for Indian handicrafts and products.</p>
+                            <div class="category-skills">
+                                <span class="skill-tag">Sales</span>
+                                <span class="skill-tag">Customer Engagement</span>
+                                <span class="skill-tag">Retail Operations</span>
+                            </div>
+                        </div>
+
+                        <!-- Category 6 -->
+                        <div class="category-card">
+                            <img class="card-thumb" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60" alt="IT/ITeS">
+                            <div class="category-number">06</div>
+                            <h3>IT/ITeS</h3>
+                            <p>Develop digital solutions and IT skills for tourism and hospitality sector transformation.</p>
+                            <div class="category-skills">
+                                <span class="skill-tag">Digital Solutions</span>
+                                <span class="skill-tag">Web Development</span>
+                                <span class="skill-tag">IT Services</span>
+                            </div>
+                        </div>
+
+                        <!-- Category 7 -->
+                        <div class="category-card">
+                            <img class="card-thumb" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=60" alt="Electronics">
+                            <div class="category-number">07</div>
+                            <h3>Electronics</h3>
+                            <p>Master electronics and device maintenance for hospitality technology infrastructure.</p>
+                            <div class="category-skills">
+                                <span class="skill-tag">Device Maintenance</span>
+                                <span class="skill-tag">Electronics</span>
+                                <span class="skill-tag">Technical Support</span>
+                            </div>
+                        </div>
+
+                        <!-- Category 8 -->
+                        <div class="category-card">
+                            <img class="card-thumb" src="https://images.unsplash.com/photo-1511918984145-48de785d4c4b?auto=format&fit=crop&w=1200&q=60" alt="Automotive">
+                            <div class="category-number">08</div>
+                            <h3>Automotive</h3>
+                            <p>Develop skills in vehicle maintenance and management for tourism transportation services.</p>
+                            <div class="category-skills">
+                                <span class="skill-tag">Vehicle Maintenance</span>
+                                <span class="skill-tag">Safety Standards</span>
+                                <span class="skill-tag">Fleet Management</span>
+                            </div>
+                        </div>
+
+                        <!-- Category 9 -->
+                        <div class="category-card">
+                            <img class="card-thumb" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=60" alt="Multi-Skill Foundation">
+                            <div class="category-number">09</div>
+                            <h3>Multi-Skill Foundation Course</h3>
+                            <p>Comprehensive foundation training covering multiple hospitality and tourism skills for holistic development.</p>
+                            <div class="category-skills">
+                                <span class="skill-tag">Hospitality</span>
+                                <span class="skill-tag">Tourism</span>
+                                <span class="skill-tag">Foundation Skills</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- TIMELINE SECTION -->
+        <section id="timeline" class="page-section">
+            <div class="page-header">
+                <div class="container">
+                    <h1>Competition Timeline</h1>
+                    <p>Important Dates and Milestones</p>
+                </div>
+            </div>
+
+            <section class="timeline-section">
+                <div class="container">
+                    <div class="timeline">
+                        <!-- School Level -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <span class="marker-dot"></span>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>School Level Competition</h3>
+                                <p class="timeline-date">November 2025</p>
+                                <p class="timeline-description">
+                                    School-level competitions will be conducted across all participating schools throughout the month of November. Students will showcase their skills in their respective categories with regional judging and evaluation.
+                                </p>
+                                <ul class="timeline-details">
+                                    <li>Registration opens in October</li>
+                                    <li>Preliminary rounds start early November</li>
+                                    <li>Finals held mid-November</li>
+                                    <li>Winners announced by end of November</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Zonal Level -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <span class="marker-dot"></span>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>Zonal Level Competition</h3>
+                                <p class="timeline-date">December 2025</p>
+                                <p class="timeline-description">
+                                    Zonal-level competitions will be conducted in December where winners from school-level competitions will compete at the zonal level. This provides a platform for talented students to showcase their skills on a broader stage.
+                                </p>
+                                <ul class="timeline-details">
+                                    <li>Top performers from school level qualify</li>
+                                    <li>Zonal hubs established across regions</li>
+                                    <li>National-level judges evaluate performance</li>
+                                    <li>Merit certificates and awards distributed</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- National Recognition -->
+                        <div class="timeline-item">
+                            <div class="timeline-marker">
+                                <span class="marker-dot"></span>
+                            </div>
+                            <div class="timeline-content">
+                                <h3>National Recognition & Awards</h3>
+                                <p class="timeline-date">January 2026</p>
+                                <p class="timeline-description">
+                                    Outstanding performers from zonal competitions will receive national recognition and awards. This milestone celebrates excellence and provides career advancement opportunities in tourism and hospitality sectors.
+                                </p>
+                                <ul class="timeline-details">
+                                    <li>Grand finale planning begins</li>
+                                    <li>Selected participants for national event</li>
+                                    <li>Skill certification programs</li>
+                                    <li>Industry partnerships and placement opportunities</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="competition-info">
+                <div class="container">
+                    <h2>Key Information</h2>
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <h3>📍 Competition Levels</h3>
+                            <p>Two-tier competition structure ensures equal opportunity at school and zonal levels</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>👥 Participants</h3>
+                            <p>Students from schools across India compete in their respective skill categories</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>🎖️ Recognition</h3>
+                            <p>Winners receive certificates, awards, and career opportunities in tourism sector</p>
+                        </div>
+                        <div class="info-card">
+                            <h3>🌟 Skill Focus</h3>
+                            <p>All competitions focus on real-world skills relevant to heritage and tourism industries</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="page-section">
+            <div class="page-header">
+                <div class="container">
+                    <h1>Skill Demonstrations</h1>
+                    <p>Interactive Real-World Skills Being Tested</p>
+                </div>
+            </div>
+
+            <section class="skills-showcase">
+                <div class="container">
+                    <div class="skills-grid">
+                        <!-- Skill 1 -->
+                        <div class="skill-demo">
+                            <img class="skill-thumb" src="https://images.unsplash.com/photo-1505765057191-7c1c2b8f0a5b?auto=format&fit=crop&w=1200&q=60" alt="Mini Tourism Stall">
+                            <div class="skill-icon">🏪</div>
+                            <h3>Mini Tourism Stall</h3>
+                            <p class="skill-category">Travel & Tourism</p>
+                            <p class="skill-description">
+                                Participants promote a local destination with brochures, maps, QR codes, and engaging presentation techniques.
+                            </p>
+                            <div class="skill-requirements">
+                                <strong>Key Skills:</strong>
+                                <ul>
+                                    <li>Destination Knowledge</li>
+                                    <li>Sales Communication</li>
+                                    <li>Customer Engagement</li>
+                                    <li>Digital Literacy (QR Codes)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Skill 2 -->
+                        <div class="skill-demo">
+                            <img class="skill-thumb" src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=60" alt="Cultural Food Exhibition">
+                            <div class="skill-icon">🍜</div>
+                            <h3>Cultural Food Exhibition</h3>
+                            <p class="skill-category">Food Production</p>
+                            <p class="skill-description">
+                                Showcase culinary skills by preparing traditional dishes with fusion elements. Focus on presentation and food safety.
+                            </p>
+                            <div class="skill-requirements">
+                                <strong>Key Skills:</strong>
+                                <ul>
+                                    <li>Food Preparation</li>
+                                    <li>Recipe Knowledge</li>
+                                    <li>Hygiene & Safety</li>
+                                    <li>Plating & Presentation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Skill 3 -->
+                        <div class="skill-demo">
+                            <img class="skill-thumb" src="https://images.unsplash.com/photo-1520975919076-9abf3c4f7b16?auto=format&fit=crop&w=1200&q=60" alt="Traditional Dress Showcase">
+                            <div class="skill-icon">👗</div>
+                            <h3>Traditional Dress Showcase</h3>
+                            <p class="skill-category">Apparel</p>
+                            <p class="skill-description">
+                                Display traditional attire with modern adaptation. Participants explain garment construction and cultural significance.
+                            </p>
+                            <div class="skill-requirements">
+                                <strong>Key Skills:</strong>
+                                <ul>
+                                    <li>Tailoring Techniques</li>
+                                    <li>Design Understanding</li>
+                                    <li>Cultural Knowledge</li>
+                                    <li>Fashion Presentation</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Skill 4 -->
+                        <div class="skill-demo">
+                            <img class="skill-thumb" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=60" alt="Traditional Therapy Demonstration">
+                            <div class="skill-icon">🌿</div>
+                            <h3>Traditional Therapy Demonstration</h3>
+                            <p class="skill-category">Beauty & Wellness</p>
+                            <p class="skill-description">
+                                Demonstrate traditional herbal treatments and wellness practices. Participants explain benefits and applications.
+                            </p>
+                            <div class="skill-requirements">
+                                <strong>Key Skills:</strong>
+                                <ul>
+                                    <li>Herbal Knowledge</li>
+                                    <li>Treatment Techniques</li>
+                                    <li>Customer Care</li>
+                                    <li>Safety Protocols</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Skill 5 -->
+                        <div class="skill-demo">
+                            <img class="skill-thumb" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=60" alt="Handicraft Retail Model">
+                            <div class="skill-icon">🎨</div>
+                            <h3>Handicraft Retail Model</h3>
+                            <p class="skill-category">Retail</p>
+                            <p class="skill-description">
+                                Create a mock shop selling Indian crafts, souvenirs, and products. Focus on customer service and sales excellence.
+                            </p>
+                            <div class="skill-requirements">
+                                <strong>Key Skills:</strong>
+                                <ul>
+                                    <li>Sales Techniques</li>
+                                    <li>Product Knowledge</li>
+                                    <li>Customer Service</li>
+                                    <li>Point of Sale Operations</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Skill 6 -->
+                        <div class="skill-demo">
+                            <img class="skill-thumb" src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60" alt="Tourism Web Platform">
+                            <div class="skill-icon">💻</div>
+                            <h3>Tourism Web Platform</h3>
+                            <p class="skill-category">IT/ITeS</p>
+                            <p class="skill-description">
+                                Develop interactive digital maps and websites showcasing heritage sites, food joints, and tourism information.
+                            </p>
+                            <div class="skill-requirements">
+                                <strong>Key Skills:</strong>
+                                <ul>
+                                    <li>Web Development</li>
+                                    <li>Database Management</li>
+                                    <li>User Interface Design</li>
+                                    <li>Content Management</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Skill 7 -->
+                        <div class="skill-demo">
+                            <img class="skill-thumb" src="https://images.unsplash.com/photo-1511918984145-48de785d4c4b?auto=format&fit=crop&w=1200&q=60" alt="Transport Model for Tourists">
+                            <div class="skill-icon">🚗</div>
+                            <h3>Transport Model for Tourists</h3>
+                            <p class="skill-category">Automotive</p>
+                            <p class="skill-description">
+                                Demonstrate vehicle maintenance, safety features, and fleet management for tourism transportation services.
+                            </p>
+                            <div class="skill-requirements">
+                                <strong>Key Skills:</strong>
+                                <ul>
+                                    <li>Vehicle Maintenance</li>
+                                    <li>Safety Standards</li>
+                                    <li>Customer Comfort</li>
+                                    <li>Route Planning</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Skill 8 -->
+                        <div class="skill-demo">
+                            <img class="skill-thumb" src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=60" alt="Heritage Site Information Kiosk">
+                            <div class="skill-icon">🔘</div>
+                            <h3>Heritage Site Information Kiosk</h3>
+                            <p class="skill-category">Electronics</p>
+                            <p class="skill-description">
+                                Build a button-based interactive kiosk that plays audio information about heritage monuments in multiple languages.
+                            </p>
+                            <div class="skill-requirements">
+                                <strong>Key Skills:</strong>
+                                <ul>
+                                    <li>Electronics Assembly</li>
+                                    <li>Audio Technology</li>
+                                    <li>User Interface Design</li>
+                                    <li>Technical Support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="digital-features">
+                <div class="container">
+                    <h2>Digital & Interactive Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <h3>Interactive Digital Map</h3>
+                            <p>Show heritage sites and food joints on an interactive map with detailed information about each location</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Tourism Promotion Website</h3>
+                            <p>Create a platform where tourism leaders can showcase local destinations with multimedia content</p>
+                        </div>
+                        <div class="feature-card">
+                            <h3>Audio Heritage Guide</h3>
+                            <p>Press a button to hear audio in simple language about monuments, heritage sites, and local attractions</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="page-section">
+            <div class="page-header">
+                <div class="container">
+                    <h1>About the Competition</h1>
+                    <p>Empowering Students Through Skill Excellence</p>
+                </div>
+            </div>
+
+            <section class="about-content">
+                <div class="container">
+                    <div class="about-section">
+                        <h2>Our Mission</h2>
+                        <p>
+                            The Incredible India: Heritage, Hospitality & Tourism Skill Competition aims to showcase India's rich cultural heritage and world-class hospitality standards. By engaging students in practical skill demonstrations, we nurture the next generation of industry professionals who will represent India on the global tourism stage.
+                        </p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Our Vision</h2>
+                        <p>
+                            To create a platform where young talents from across India can demonstrate their skills in heritage preservation, hospitality excellence, and tourism innovation. We envision a generation equipped with both traditional knowledge and modern technological expertise to elevate India's tourism sector.
+                        </p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Competition Objectives</h2>
+                        <ul class="objectives-list">
+                            <li>
+                                <strong>Skill Development:</strong> Encourage students to develop practical skills in heritage, hospitality, and tourism sectors
+                            </li>
+                            <li>
+                                <strong>Industry Exposure:</strong> Connect students with industry professionals and career opportunities
+                            </li>
+                            <li>
+                                <strong>Cultural Preservation:</strong> Promote traditional knowledge and practices in modern contexts
+                            </li>
+                            <li>
+                                <strong>Quality Service:</strong> Establish standards for excellence in tourism and hospitality services
+                            </li>
+                            <li>
+                                <strong>Innovation:</strong> Encourage creative solutions for tourism challenges using technology
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Competition Structure</h2>
+                        <p>
+                            The competition operates on a two-tier system, beginning with school-level competitions in November, where students compete with peers in their regions. Winners then advance to the zonal-level competition in December, where they compete at a broader stage. This structure ensures equal opportunity and fair evaluation of all participants.
+                        </p>
+                    </div>
+
+                    <div class="about-section">
+                        <h2>Why Participate?</h2>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <h3>🎯 Career Advancement</h3>
+                                <p>Gain recognition and career opportunities in the tourism and hospitality industry</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h3>🏆 Awards & Recognition</h3>
+                                <p>Receive certificates, medals, and national recognition for your achievements</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h3>🌟 Skill Enhancement</h3>
+                                <p>Develop practical skills that are in high demand in the global market</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h3>🤝 Industry Connections</h3>
+                                <p>Network with industry leaders and professionals in tourism and hospitality</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h3>🌍 Global Platform</h3>
+                                <p>Represent India and showcase talents on a national platform</p>
+                            </div>
+                            <div class="benefit-card">
+                                <h3>💡 Innovation Opportunity</h3>
+                                <p>Showcase innovative ideas that can transform India's tourism sector</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-section">
+                        <h2>Travel Tips & Best Time to Visit</h2>
+                        <p style="color:var(--text-light); line-height:1.7;">Practical tips for participants and visitors planning to attend events or explore India's heritage sites.</p>
+                        <ul class="objectives-list" style="margin-top:12px;">
+                            <li><strong>Best Time:</strong> October to March — pleasant weather across most regions.</li>
+                            <li><strong>Packing:</strong> Lightweight cottons for day, a light jacket for cool evenings, and comfortable walking shoes.</li>
+                            <li><strong>Local Travel:</strong> Use registered taxis or app-based services; book trains and long-distance travel in advance.</li>
+                            <li><strong>Health & Safety:</strong> Carry basic medicines, stay hydrated, and practice food-hygiene when trying street foods.</li>
+                            <li><strong>Cultural Etiquette:</strong> Dress respectfully at religious sites and ask permission before photographing people.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Category Details Modal -->
+    <div id="categoryModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+        <div class="modal-panel" role="document">
+            <button id="closeModal" class="modal-close" aria-label="Close details">×</button>
+            <div id="modalContent" class="modal-content">
+                <!-- Filled dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p id="footer-year">&copy; 2025 Incredible India Skill Competition. All rights reserved.</p>
+            <p>Heritage | Hospitality | Tourism</p>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <script>
+        /* Consolidated script: navigation, back-to-top, lazy-loading, and accessible modal */
+
+        // --- Navigation & Sections ---
+        function showSection(sectionId, pushHistory = true) {
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(s => s.classList.remove('active'));
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // update nav active state
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            const active = document.querySelector(`.nav-btn[data-section="${sectionId}"]`);
+            if (active) active.classList.add('active');
+
+            if (pushHistory && history && typeof history.replaceState === 'function') {
+                history.replaceState(null, '', `#${sectionId}`);
+            }
+        }
+
+        // --- Back to top ---
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (!backToTopBtn) return;
+            backToTopBtn.style.display = window.pageYOffset > 300 ? 'block' : 'none';
+        });
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+        backToTopBtn && backToTopBtn.addEventListener('click', scrollToTop);
+
+        // --- Mobile nav toggle ---
+        const navToggle = document.getElementById('navToggle');
+        const mainNav = document.getElementById('mainNav');
+        if (navToggle && mainNav) {
+            navToggle.addEventListener('click', function () {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', String(!expanded));
+                mainNav.classList.toggle('mobile-hidden');
+            });
+        }
+
+        // Attach navigation buttons behavior
+        document.querySelectorAll('.nav-btn[data-section]').forEach(btn => {
+            btn.addEventListener('click', function () {
+                const section = this.getAttribute('data-section');
+                showSection(section);
+                // close mobile nav only on small screens if currently expanded
+                if (navToggle && window.innerWidth <= 768 && navToggle.getAttribute('aria-expanded') === 'true') {
+                    mainNav.classList.add('mobile-hidden');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // --- Page setup on load ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // set active home button
+            const homeBtn = document.querySelector('.nav-btn[data-section="home"]');
+            if (homeBtn) homeBtn.classList.add('active');
+
+            // ensure mobile nav hidden by default on small screens
+            if (window.innerWidth <= 768 && mainNav && !mainNav.classList.contains('mobile-hidden')) {
+                mainNav.classList.add('mobile-hidden');
+            }
+
+            // update footer year
+            const fy = document.getElementById('footer-year');
+            if (fy) fy.textContent = `© ${new Date().getFullYear()} Incredible India Skill Competition. All rights reserved.`;
+
+            // deep link support
+            const h = location.hash && location.hash.replace('#','');
+            if (h) showSection(h, false);
+        });
+
+        // --- Smooth reveal + lazy images ---
+        window.addEventListener('load', function () {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(en => {
+                    if (en.isIntersecting) {
+                        en.target.style.opacity = '1';
+                        en.target.style.transform = 'translateY(0)';
+                        obs.unobserve(en.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -100px 0px' });
+
+            document.querySelectorAll('.category-card, .overview-card, .link-card, .timeline-content, .skill-demo, .benefit-card, .info-card')
+                .forEach(el => {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(el);
+                });
+
+            // lazy load
+            document.querySelectorAll('img').forEach(img => { if (!img.hasAttribute('loading')) img.setAttribute('loading','lazy'); });
+        });
+
+        // --- Accessible Modal (category details) ---
+        (function () {
+            const categoryDetails = {
+                '1': { title: 'Travel & Tourism', image: 'https://images.unsplash.com/photo-1505765057191-7c1c2b8f0a5b?auto=format&fit=crop&w=1400&q=80', longDescription: 'Focuses on destination knowledge, itinerary planning, customer service and responsible tourism practices. Participants will demonstrate skills in creating travel packages and guiding visitors.', sampleTasks: ['Design a 3-day itinerary for a heritage city','Prepare a short guided-tour script','Handle a customer query scenario'], judgingCriteria: ['Accuracy of information','Customer engagement','Practicality of plan'] },
+                '2': { title: 'Food Production', image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1400&q=80', longDescription: 'Covers culinary techniques, hygiene practices and presentation. Emphasis on traditional Indian dishes and modern plating.', sampleTasks: ['Prepare a regional dish within time limits','Explain food safety steps taken','Present plated dish for judging'], judgingCriteria: ['Taste','Hygiene','Presentation'] },
+                '3': { title: 'Apparel', image: 'https://images.unsplash.com/photo-1520975919076-9abf3c4f7b16?auto=format&fit=crop&w=1400&q=80', longDescription: 'Emphasizes tailoring, fabric knowledge and culturally appropriate design. Participants may show alterations and styling techniques.', sampleTasks: ['Construct a simple garment sample','Explain fabric selection','Demonstrate finishing techniques'], judgingCriteria: ['Craftsmanship','Design sensibility','Cultural authenticity'] },
+                '4': { title: 'Beauty & Wellness', image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1400&q=80', longDescription: 'Traditional and modern wellness practices focused on client safety and service. Demonstrations may include herbal treatments and consultative care.', sampleTasks: ['Explain treatment plan for a client','Demonstrate a safe therapy technique','Showcase product knowledge'], judgingCriteria: ['Safety','Client communication','Technique'] },
+                '5': { title: 'Retail', image: 'https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1400&q=80', longDescription: 'Retail operations, merchandising and customer engagement for handicrafts and souvenirs. Focus on sales skills and product storytelling.', sampleTasks: ['Set up a small display','Demonstrate a sales pitch','Handle a mock transaction'], judgingCriteria: ['Sales technique','Display aesthetics','Customer service'] },
+                '6': { title: 'IT/ITeS', image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80', longDescription: 'Digital solutions for tourism: web platforms, digital maps, and content management. Judges look for usability and creativity.', sampleTasks: ['Prototype a tourism web page','Demonstrate map integration','Explain backend data model'], judgingCriteria: ['Usability','Functionality','Relevance'] },
+                '7': { title: 'Electronics', image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1400&q=80', longDescription: 'Device maintenance and simple electronics for kiosks and information systems. Emphasis on reliability and safety.', sampleTasks: ['Assemble a small kiosk circuit','Troubleshoot a fault','Explain maintenance schedule'], judgingCriteria: ['Technical correctness','Safety','Problem solving'] },
+                '8': { title: 'Automotive', image: 'https://images.unsplash.com/photo-1511918984145-48de785d4c4b?auto=format&fit=crop&w=1400&q=80', longDescription: 'Vehicle maintenance, safety checks and fleet management for tourist transport. Practical skills and adherence to safety standards are assessed.', sampleTasks: ['Perform a safety checklist','Diagnose a basic mechanical issue','Plan a route for a tour bus'], judgingCriteria: ['Safety adherence','Technical skill','Efficiency'] },
+                '9': { title: 'Multi-Skill Foundation Course', image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1400&q=80', longDescription: 'A foundational program combining hospitality, basic tourism, and service skills to prepare participants for multi-disciplinary roles.', sampleTasks: ['Demonstrate basic front-desk tasks','Show hospitality etiquette','Present a short customer-service scenario'], judgingCriteria: ['Breadth of skills','Professionalism','Application'] }
+            };
+
+            const modal = document.getElementById('categoryModal');
+            const modalPanel = modal && modal.querySelector('.modal-panel');
+            const modalContent = document.getElementById('modalContent');
+            const closeModalBtn = document.getElementById('closeModal');
+
+            let lastFocused = null;
+            let focusable = [];
+            let focusTrapHandler = null;
+
+            function setFocusableList() {
+                if (!modalPanel) return;
+                focusable = Array.from(modalPanel.querySelectorAll('a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])'));
+            }
+
+            function trapFocus(e) {
+                if (e.key !== 'Tab') return;
+                if (focusable.length === 0) return;
+                const first = focusable[0];
+                const last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault(); last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault(); first.focus();
+                }
+            }
+
+            function openCategoryModal(id, opener) {
+                const data = categoryDetails[id];
+                if (!data || !modal) return;
+                lastFocused = opener || document.activeElement;
+                modal.setAttribute('aria-hidden', 'false');
+                modalContent.innerHTML = `
+                    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px; align-items:start;">
+                        <div>
+                            <img src="${data.image}" alt="${data.title}" loading="lazy" style="width:100%; border-radius:8px; max-height:420px; object-fit:cover;">
+                        </div>
+                        <div>
+                            <h2 style="margin-top:0; color:var(--primary-color);">${data.title}</h2>
+                            <p style="color:var(--text-light);">${data.longDescription}</p>
+                            <h4 style="margin-bottom:6px; color:var(--accent-color);">Sample Tasks</h4>
+                            <ul style="color:var(--text-light); margin-top:6px;">${data.sampleTasks.map(t=>`<li>${t}</li>`).join('')}</ul>
+                            <h4 style="margin-top:12px; margin-bottom:6px; color:var(--accent-color);">Judging Criteria</h4>
+                            <ul style="color:var(--text-light); margin-top:6px;">${data.judgingCriteria.map(c=>`<li>${c}</li>`).join('')}</ul>
+                        </div>
+                    </div>
+                `;
+                // animate/visible handled by CSS via aria-hidden
+                setFocusableList();
+                window.setTimeout(() => { if (closeModalBtn) closeModalBtn.focus(); }, 50);
+                focusTrapHandler = trapFocus;
+                document.addEventListener('keydown', focusTrapHandler);
+            }
+
+            function closeCategoryModal() {
+                if (!modal) return;
+                modal.setAttribute('aria-hidden', 'true');
+                modalContent.innerHTML = '';
+                if (focusTrapHandler) document.removeEventListener('keydown', focusTrapHandler);
+                focusTrapHandler = null;
+                try { lastFocused && lastFocused.focus(); } catch (e) {}
+                lastFocused = null;
+            }
+
+            // attach handlers
+            document.querySelectorAll('.category-card').forEach(card => {
+                card.addEventListener('click', function () {
+                    const numEl = this.querySelector('.category-number');
+                    let id = '0';
+                    if (numEl) id = numEl.textContent.trim().replace(/^0+/, '');
+                    openCategoryModal(id, this);
+                });
+            });
+
+            closeModalBtn && closeModalBtn.addEventListener('click', closeCategoryModal);
+            modal && modal.addEventListener('click', function (e) { if (e.target === modal) closeCategoryModal(); });
+            document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal && modal.getAttribute('aria-hidden') === 'false') closeCategoryModal(); });
+        })();
+    </script>
+</body>
+</html>
